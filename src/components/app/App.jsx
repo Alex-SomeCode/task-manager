@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./App.css";
+import "./App.scss";
 
 import Header from "../header/Header.jsx";
 import Footer from "../footer/Footer.jsx";

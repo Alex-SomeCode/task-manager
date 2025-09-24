@@ -9,8 +9,8 @@ const CaseList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
 
   return (
     <div
-      className="d-flex flex-wrap justify-content-center container overflow-auto "
-      style={{ maxHeight: "45vh" }}
+      className="d-flex flex-wrap justify-content-center container overflow-auto"
+      style={{ maxHeight: "60vh" }}
     >
       {tasks.length === 0 ? (
         <h2 className=" text-center">No task added yet</h2>
