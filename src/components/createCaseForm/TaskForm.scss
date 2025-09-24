@@ -1,0 +1,11 @@
+.caseForm {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+
+  input, input:focus,
+  textarea:focus, textarea {
+    background-color: bisque;
+  }
+  
+}

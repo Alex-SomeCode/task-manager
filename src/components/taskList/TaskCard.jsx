@@ -1,0 +1,36 @@
+const TaskCard = ({ remove, edit, id, topic, task, isDone }) => {
+  //   console.log({ topic, task, id, isDone });
+
+  const date = new Date(id);
+  return (
+    <div
+      key={id}
+      className="card m-3 "
+      style={{ width: "18rem", backgroundColor: "bisque" }}
+    >
+      <div className="card-body border-black">
+        <h5 className="card-title">{topic}</h5>
+        <p className="card-text">{task}</p>
+        <p className="card-text">is done: {isDone ? "YES" : "NO"}</p>
+        <p>begin: {date.toLocaleString()}</p>
+
+        <div className="d-flex justify-content-between">
+          <button
+            onClick={() => remove(id)}
+            className="btn btn-outline-danger mt-1"
+          >
+            remove task
+          </button>
+          <button
+            onClick={() => edit({ topic, task, id, isDone })}
+            className="btn btn-outline-primary mt-1"
+          >
+            edit task
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TaskCard;

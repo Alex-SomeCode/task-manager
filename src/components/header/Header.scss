@@ -1,0 +1,19 @@
+.header {
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 1400px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &-logo {
+    height: 100px;
+    width: 112px;
+    background-image: url("../../assets/react.svg");
+    background-size: cover;
+    background-position: center;
+  }
+}
