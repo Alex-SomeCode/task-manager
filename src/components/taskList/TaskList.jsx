@@ -1,5 +1,5 @@
 import TaskCard from "./TaskCard";
-
+import "./TaskList.scss"
 const TaskList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
   console.log(tasks);
 
@@ -8,10 +8,7 @@ const TaskList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
   );
 
   return (
-    <div
-      className="d-flex flex-wrap justify-content-center container overflow-auto"
-      style={{ maxHeight: "60vh" }}
-    >
+    <div className="d-flex flex-wrap justify-content-center container overflow-auto max-height-60">
       {tasks.length === 0 ? (
         <h2 className=" text-center">No task added yet</h2>
       ) : (
