@@ -1,7 +1,7 @@
-const TaskCard = ({ remove, edit, id, topic, task, isDone }) => {
-  //   console.log({ topic, task, id, isDone });
-
+const TaskCard = ({ _task, remove, edit }) => {
+  const { id, isDone, task, topic } = _task;
   const date = new Date(id);
+
   return (
     <div
       key={id}

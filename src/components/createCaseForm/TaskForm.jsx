@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./TaskForm.scss";
-const CreateCaseForm = ({ addTask, taskToEdit }) => {
+const TaskForm = ({ addTask, taskToEdit }) => {
   const [topic, setTopic] = useState("");
   const [task, setTask] = useState("");
   const [isDone, setIsDone] = useState(false);
@@ -53,8 +53,9 @@ const CreateCaseForm = ({ addTask, taskToEdit }) => {
         />
         <div>
           <h5>
-            isDone
+            <label htmlFor="isDoneCheckbox">isDone</label>
             <input
+              id="isDoneCheckbox"
               type="checkbox"
               onChange={onStatusChange}
               className="container"
@@ -70,4 +71,4 @@ const CreateCaseForm = ({ addTask, taskToEdit }) => {
   );
 };
 
-export default CreateCaseForm;
+export default TaskForm;

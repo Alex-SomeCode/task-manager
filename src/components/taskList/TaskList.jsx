@@ -1,6 +1,6 @@
 import TaskCard from "./TaskCard";
 
-const CaseList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
+const TaskList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
   console.log(tasks);
 
   const tasksToRender = tasks.filter(
@@ -15,15 +15,12 @@ const CaseList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
       {tasks.length === 0 ? (
         <h2 className=" text-center">No task added yet</h2>
       ) : (
-        tasksToRender.map((_case) => (
+        tasksToRender.map((task) => (
           <TaskCard
+            key={task.id}
+            _task={task}
             remove={removeTask}
             edit={setEditTask}
-            key={_case.id}
-            id={_case.id}
-            topic={_case.topic}
-            task={_case.task}
-            isDone={_case.isDone}
           />
         ))
       )}
@@ -31,4 +28,4 @@ const CaseList = ({ removeTask, setEditTask, taskToEdit, tasks }) => {
   );
 };
 
-export default CaseList;
+export default TaskList;

@@ -4,8 +4,8 @@ import "./App.scss";
 
 import Header from "../header/Header.jsx";
 import Footer from "../footer/Footer.jsx";
-import CreateCaseForm from "../createCaseForm/TaskForm.jsx";
-import CaseList from "../taskList/TaskList.jsx";
+import TaskForm from "../createCaseForm/TaskForm.jsx";
+import TaskList from "../taskList/TaskList.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -26,9 +26,11 @@ function App() {
 
   const handleAddTask = (newTask) => {
     if (taskToEdit) {
-      console.log(taskToEdit);
-      tasks[tasks.findIndex((task) => task.id == taskToEdit.id)] = newTask;
-      setTasks([...tasks]);
+      const updatedTasks = tasks.map((task) =>
+        task.id === taskToEdit.id ? newTask : task
+      );
+
+      setTasks(updatedTasks);
       setEditTask(null);
       return;
     }
@@ -39,8 +41,8 @@ function App() {
   return (
     <div className="App bg-dark" style={{ minHeight: "100vh" }}>
       <Header />
-      <CreateCaseForm addTask={handleAddTask} taskToEdit={taskToEdit} />
-      <CaseList
+      <TaskForm addTask={handleAddTask} taskToEdit={taskToEdit} />
+      <TaskList
         removeTask={handleRemoveTask}
         setEditTask={setEditTask}
         taskToEdit={taskToEdit}
