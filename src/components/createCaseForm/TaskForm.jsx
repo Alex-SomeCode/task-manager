@@ -4,12 +4,14 @@ const TaskForm = ({ addTask, taskToEdit }) => {
   const [topic, setTopic] = useState("");
   const [task, setTask] = useState("");
   const [isDone, setIsDone] = useState(false);
+  const [result, setResult] = useState("");
 
   useEffect(() => {
     if (taskToEdit) {
       setTopic(taskToEdit.topic);
       setTask(taskToEdit.task);
       setIsDone(taskToEdit.isDone);
+      setResult(taskToEdit.result)
     }
   }, [taskToEdit]);
 
@@ -25,12 +27,14 @@ const TaskForm = ({ addTask, taskToEdit }) => {
         topic: topic,
         task: task,
         isDone: isDone,
+        result: result,
       };
 
       addTask(newCase);
       setTopic("");
       setTask("");
       setIsDone(false);
+      setResult("");
     }
   };
 
@@ -63,6 +67,13 @@ const TaskForm = ({ addTask, taskToEdit }) => {
             />
           </h5>
         </div>
+        <input
+          type="text"
+          className="form-control mb-1"
+          placeholder="Result"
+          value={result}
+          onChange={(e) => setResult(e.target.value)}
+        />
         <button className="btn btn-info container" type="submit">
           {taskToEdit ? "Save" : "Add"}
         </button>

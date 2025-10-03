@@ -1,5 +1,5 @@
 const TaskCard = ({ _task, remove, edit }) => {
-  const { id, isDone, task, topic } = _task;
+  const { id, isDone, task, topic, result } = _task;
   const date = new Date(id);
 
   return (
@@ -13,6 +13,7 @@ const TaskCard = ({ _task, remove, edit }) => {
         <p className="card-text">{task}</p>
         <p className="card-text">is done: {isDone ? "YES" : "NO"}</p>
         <p>begin: {date.toLocaleString()}</p>
+        <p>{!result ? "Unknown Result" : result}</p>
 
         <div className="d-flex justify-content-between">
           <button
@@ -22,7 +23,7 @@ const TaskCard = ({ _task, remove, edit }) => {
             remove task
           </button>
           <button
-            onClick={() => edit({ topic, task, id, isDone })}
+            onClick={() => edit({ topic, task, id, isDone, result })}
             className="btn btn-outline-primary mt-1"
           >
             edit task
